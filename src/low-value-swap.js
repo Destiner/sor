@@ -32,6 +32,7 @@ async function calculateForPair(tokenIn, tokenOut, amount, swapType) {
     const amountNumber = new BigNumber(amount);
 
     await sor.fetchPools();
+    await sor.setCostOutputToken(tokenOut);
     const [tradeSwaps] = await sor.getSwaps(tokenIn, tokenOut, swapType, amountNumber);
     const routeCount = tradeSwaps.length;
     const hopCount = tradeSwaps.reduce((hopCount, route) => {
