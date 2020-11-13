@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@balancer-labs/sor": "github:balancer-labs/balancer-sor#john/bal-307-replace-env-ipfs-node-with-constructor",
+    "@balancer-labs/sor": "github:balancer-labs/balancer-sor#john/bal-331-make-new-tests-from-timur-pass",
     "@ethersproject/providers": "^5.0.14",
     "bignumber.js": "^9.0.1",
     "dotenv": "^8.2.0"
