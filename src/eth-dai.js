@@ -22,7 +22,7 @@ async function calculate() {
 
 async function calculateForPair(tokenIn, tokenOut, amount, swapType) {
 	console.log('Init SOR')
-	const url = 'https://cloudflare-ipfs.com/ipns/balancer-team-bucket.storage.fleek.co/balancer-exchange/pools';
+	const url = 'https://ipfs.fleek.co/ipns/balancer-team-bucket.storage.fleek.co/balancer-exchange/pools';
 	const wsProvider = new JsonRpcProvider(ALCHEMY_ENDPOINT, APP_CHAIN_ID);
 	const sor = new SOR(
         wsProvider,
