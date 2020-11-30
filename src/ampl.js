@@ -30,12 +30,13 @@ async function calculateForPair(tokenIn, tokenOut, amount, swapType) {
 
     const amountNumber = new BigNumber(amount);
 
-    console.log('Fetch pools')
-    // await sor.fetchFilteredPairPools(tokenIn, tokenOut);
+    console.log('Fetch filtered pools')
+    await sor.fetchFilteredPairPools(tokenIn, tokenOut);
+    let [tradeSwaps, tradeAmount] = await sor.getSwaps(tokenIn, tokenOut, swapType, amountNumber);
+    console.log('Swaps', tradeSwaps.length, tradeAmount.toString());
+    console.log('Fetch all pools')
     await sor.fetchPools();
-    // const amplPool = sor.onChainCache.pools.find(pool => pool.id === '0x7860e28ebfb8ae052bfe279c07ac5d94c9cd2937');
-    console.log('Get swaps')
-    const [tradeSwaps, tradeAmount] = await sor.getSwaps(tokenIn, tokenOut, swapType, amountNumber);
+    [tradeSwaps, tradeAmount] = await sor.getSwaps(tokenIn, tokenOut, swapType, amountNumber);
     console.log('Swaps', tradeSwaps.length, tradeAmount.toString());
 }
 
